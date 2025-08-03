@@ -76,9 +76,7 @@ function Login() {
                 value={isPassHidden}
                 onChange={() => setIsPassHidden(!isPassHidden)}
               />
-              <label htmlFor='showPassword'>{`${
-                isPassHidden ? "Show Password" : "Hide Password"
-              }`}</label>
+              <label htmlFor='showPassword'>Show Password</label>
             </div>
 
             <button type='submit' className='primary-btn'>
