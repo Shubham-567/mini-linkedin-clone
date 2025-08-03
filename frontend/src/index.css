@@ -4,19 +4,21 @@
 
 :root {
   /* Color Palette */
-  --bg-dark: #0f172a;
-  --bg: #1e293b;
-  --bg-light: #f8fafc;
+  --primary: hsl(205, 90%, 40%);
+  --primary: hsl(205, 90%, 40%);
+  --secondary: hsl(210, 10%, 50%);
 
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
+  --bg-dark: hsl(210, 30%, 8%);
+  --bg: hsl(210, 100%, 99%);
+  --bg-light: hsl(210, 100%, 100%);
 
-  --highlight: #3b82f6;
-  --border: #334155;
-  --border-muted: #475569;
+  --text: hsl(210, 10%, 20%);
+  --text-muted: hsl(210, 10%, 50%);
+  --text-white: hsl(0, 0%, 90%);
 
-  --primary: #3b82f6;
-  --secondary: #64748b;
+  --highlight: hsl(205, 90%, 40%);
+  --border: hsl(210, 10%, 50%);
+  --border-muted: hsl(210, 10%, 15%);
 
   /* Fonts */
   --font-body: "Inter", sans-serif;
@@ -34,7 +36,37 @@
 
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-text-white: var(--text-white);
+
+  --color-border: var(--border);
+  --color-border-muted: var(--border-muted);
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-heading);
+}
+
+@layer components {
+  .primary-btn {
+    @apply w-full bg-primary text-text-white py-2 rounded-lg hover:bg-primary/90 transition;
+  }
+
+  /* login/register form */
+  .form-wrapper {
+    @apply flex items-center justify-center min-h-screen bg-bg px-4;
+  }
+  .form-container {
+    @apply w-full max-w-md bg-bg-light p-6 rounded-lg shadow-lg;
+  }
+  .form-heading {
+    @apply text-2xl font-bold mb-4 text-center;
+  }
+  .form-desc {
+    @apply text-base text-text-muted text-center mb-4;
+  }
+  .form-label {
+    @apply block text-sm font-medium mb-1;
+  }
+  .form-input {
+    @apply w-full px-4 py-2 ring ring-border rounded-lg focus:outline-none focus:ring-primary focus:ring-2;
+  }
 }
