@@ -2,7 +2,6 @@ import Post from "../models/Post.js";
 import User from "../models/User.js";
 
 export const getUserProfile = async (req, res) => {
-  console.log("Fetching user profile...");
   try {
     const userId = req.params.id;
 
@@ -13,7 +12,9 @@ export const getUserProfile = async (req, res) => {
     }
 
     // Get user's posts
-    const posts = await Post.find({ author: userId }).sort({ createdAt: -1 });
+    const posts = await Post.find({ author: userId })
+      .sort({ createdAt: -1 })
+      .populate("author", "name email");
 
     res.status(200).json({ user, posts });
   } catch (error) {

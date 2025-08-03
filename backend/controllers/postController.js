@@ -19,7 +19,7 @@ export const createPost = async (req, res) => {
   try {
     const { text } = req.body;
 
-    if (!text || text.trim() === "") {
+    if (!text || String(text).trim() === "") {
       return res.status(400).json({ message: "Post text is required" });
     }
 
