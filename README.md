@@ -63,4 +63,4 @@ npm run dev
 ## 🔗 Links
 
 - **GitHub:** [https://github.com/Shubham-567/mini-linkedin-clone](https://github.com/Shubham-567/mini-linkedin-clone)
-- **Live Demo:** [https://mini-linkedin.vercel.app](https://mini-linkedin.vercel.app)
+- **Live Demo:** [https://mini-linkedin-clone.vercel.app](https://mini-linkedin.vercel-clone.app)
