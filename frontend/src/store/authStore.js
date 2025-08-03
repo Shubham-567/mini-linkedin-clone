@@ -1,8 +1,22 @@
 import { create } from "zustand";
+import { jwtDecode } from "jwt-decode";
+
+const tokenFromStorage = localStorage.getItem("token");
+let userFromToken = null;
+
+if (tokenFromStorage) {
+  try {
+    const decoded = jwtDecode(tokenFromStorage);
+    userFromToken = decoded;
+  } catch (error) {
+    console.error("Invalid token: ", error);
+    localStorage.removeItem("token");
+  }
+}
 
 const useAuthStore = create((set) => ({
-  user: null,
-  token: localStorage.getItem("token") || null,
+  user: userFromToken,
+  token: tokenFromStorage,
 
   // login
   login: (userData, token) => {
@@ -12,7 +26,7 @@ const useAuthStore = create((set) => ({
 
   // logout
   logout: () => {
-    localStorage.removeItem(token);
+    localStorage.removeItem("token");
     set({ user: null, token: null });
   },
 

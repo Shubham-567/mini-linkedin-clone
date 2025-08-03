@@ -30,12 +30,13 @@ function Profile() {
     fetchUserData();
   }, [userId]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p>Loading profile...</p>;
+  if (error)
+    return <p className='text-red-500 text-lg text-center mt-20'>{error}</p>;
 
   return (
     <div className='flex flex-col lg:flex-row justify-center gap-4 px-4 py-6 lg:px-14 w-full'>
-      <div className='max-w-full lg:max-w-2/3 space-y-6'>
+      <div className='w-full lg:max-w-2/3 space-y-6'>
         {user && <ProfileCard user={user} />}
         <UserPosts posts={posts} />
       </div>

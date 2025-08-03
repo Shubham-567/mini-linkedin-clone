@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import Navbar from "../components/Navbar";
 import CreatePost from "../pages/CreatePost";
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
   return (
@@ -14,10 +15,31 @@ function AppRoutes() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/profile/:userId' element={<Profile />} />
-        <Route path='/create-post' element={<CreatePost />} />
+        <Route
+          path='/profile/:userId'
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/create-post'
+          element={
+            <ProtectedRoute>
+              <CreatePost />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path='*' element={<p>Not found</p>} />
+        <Route
+          path='*'
+          element={
+            <p className='text-4xl font-bold text-center mt-20'>
+              Page Not found 404
+            </p>
+          }
+        />
       </Routes>
     </Router>
   );

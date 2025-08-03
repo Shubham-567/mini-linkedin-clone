@@ -22,7 +22,7 @@ function PostList() {
     fetchPosts();
   }, [setPosts, setLoading]);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <p className='text-lg'>Loading Recent Posts...</p>;
 
   return (
     <div className='space-y-6'>

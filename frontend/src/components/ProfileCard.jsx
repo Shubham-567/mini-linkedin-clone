@@ -21,7 +21,9 @@ function ProfileCard({ user }) {
       {/* bio */}
       <div className='card'>
         <h3 className='heading-1'>Bio</h3>
-        <p className='text-text-muted'>{user.bio}</p>
+        <p className='text-text-muted'>
+          {user.bio.trim() !== "" ? user.bio : "No bio"}
+        </p>
       </div>
     </>
   );
