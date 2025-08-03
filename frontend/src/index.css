@@ -58,6 +58,17 @@
     @apply text-2xl font-bold mb-2;
   }
 
+  /* Navbar */
+  .navbar {
+    @apply bg-bg shadow px-6 py-3 flex items-center justify-between;
+  }
+  .logo {
+    @apply flex items-center gap-2;
+  }
+  .cta {
+    @apply flex items-center gap-2 bg-primary hover:bg-primary text-text-white px-4 py-2 rounded-lg text-sm font-medium transition;
+  }
+
   /* login/register form */
   .form-wrapper {
     @apply flex items-center justify-center min-h-screen bg-bg px-4;
