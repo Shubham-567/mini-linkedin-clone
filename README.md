@@ -4,6 +4,13 @@ A minimal LinkedIn-inspired social platform built with MERN stack. Users can reg
 
 ---
 
+## 🔗 Links
+
+- **GitHub:** [https://github.com/Shubham-567/mini-linkedin-clone](https://github.com/Shubham-567/mini-linkedin-clone)
+- **Live Demo:** [https://mini-linkedin-clone.vercel.app](https://mini-linkedin.vercel-clone.app)
+
+---
+
 ## 🛠 Stack Used
 
 - **Frontend:** React, Tailwind CSS, Zustand, Axios, React Router
@@ -57,10 +64,3 @@ npm run dev
 - View user profiles
 - Protected routes (Create Post/Profile)
 - Zustand for global state
-
----
-
-## 🔗 Links
-
-- **GitHub:** [https://github.com/Shubham-567/mini-linkedin-clone](https://github.com/Shubham-567/mini-linkedin-clone)
-- **Live Demo:** [https://mini-linkedin-clone.vercel.app](https://mini-linkedin.vercel-clone.app)
