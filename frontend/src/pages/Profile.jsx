@@ -34,19 +34,19 @@ function Profile() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className='flex justify-center gap-4 px-4 py-6'>
-      <div className='max-w-3xl space-y-6'>
+    <div className='flex flex-col lg:flex-row justify-center gap-4 px-4 py-6 lg:px-14 w-full'>
+      <div className='max-w-full lg:max-w-2/3 space-y-6'>
         {user && <ProfileCard user={user} />}
         <UserPosts posts={posts} />
       </div>
 
-      <div className='flex flex-col items-center gap-4'>
-        <div className='card flex flex-col gap-4 min-w-[400px]'>
+      <div className='flex flex-col items-center gap-4 w-full lg:w-1/3'>
+        <div className='card flex flex-col gap-4 w-full'>
           <h4 className='heading-1'>People you may know</h4>
 
           <div className='flex items-center gap-2'>
             <img
-              src={"https://placehold.co/48x48"}
+              src={"/images/profile.jpg"}
               alt='User'
               className='rounded-full h-10 w-10'
             />
@@ -58,7 +58,7 @@ function Profile() {
 
           <div className='flex items-center gap-2'>
             <img
-              src={"https://placehold.co/48x48"}
+              src={"/images/profile.jpg"}
               className='rounded-full h-10 w-10'
               alt='User'
             />
@@ -69,12 +69,12 @@ function Profile() {
           </div>
         </div>
 
-        <div className='card flex flex-col gap-4 min-w-[400px]'>
+        <div className='card flex flex-col gap-4 w-full'>
           <h4 className='heading-1'>Connection</h4>
 
           <div className='flex items-center gap-2'>
             <img
-              src={"https://placehold.co/48x48"}
+              src={"/images/profile.jpg"}
               alt='User'
               className='rounded-full h-10 w-10'
             />
@@ -86,7 +86,7 @@ function Profile() {
 
           <div className='flex items-center gap-2'>
             <img
-              src={"https://placehold.co/48x48"}
+              src={"/images/profile.jpg"}
               className='rounded-full h-10 w-10'
               alt='User'
             />

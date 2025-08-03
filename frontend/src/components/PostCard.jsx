@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatDate } from "../utils/utils";
+import { MessageCircle, ThumbsUp } from "lucide-react";
 
 function PostCard({ post }) {
   // console.log(post.author._id);
@@ -9,7 +10,7 @@ function PostCard({ post }) {
       <div className='post-header'>
         <Link to={`/profile/${post.author._id}`}>
           <img
-            src={post.author.avatar || "https://placehold.co/48x48"}
+            src={post.author.avatar || "/images/profile.jpg"}
             alt={post.author.name}
             className='post-img'
           />
@@ -24,9 +25,13 @@ function PostCard({ post }) {
 
       <p className='post-text'>{post.text}</p>
 
-      <div className='flex gap-4 text-gray-500 text-sm'>
-        <p>0 Likes</p>
-        <p>0 Comments</p>
+      <div className='flex gap-4 items-center text-gray-500 text-sm'>
+        <p className='flex gap-1 items-center'>
+          <ThumbsUp className='size-4' />0 Likes
+        </p>
+        <p className='flex gap-1 items-center'>
+          <MessageCircle className='size-4' />0 Comments
+        </p>
       </div>
     </div>
   );

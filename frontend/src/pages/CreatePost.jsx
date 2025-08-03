@@ -29,21 +29,22 @@ function CreatePost() {
 
   return (
     <div className='max-w-xl mx-auto mt-10 bg-bg p-6 rounded-xl shadow'>
-      <h2 className='text-xl font-semibold mb-4'>Create a New Post</h2>
+      <h2 className='form-heading text-start'>Create a New Post</h2>
 
       <form onSubmit={handleSubmit}>
         <textarea
-          className='w-full ring ring-border rounded-lg p-3 min-h-[120px] focus:outline-none focus:ring focus:border-primary bg-bg-light'
+          className='form-input min-h-[120px] bg-bg-light'
           placeholder="What's on your mind?"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          maxLength={500}
         />
+
+        <p className='text-sm text-text-muted text-right'>Max 500 Characters</p>
 
         {error && <p className='text-red-500 text-sm mt-2'>{error}</p>}
 
-        <button
-          type='submit'
-          className='mt-4 bg-primary hover:bg-primary/90 text-text-white px-5 py-2 rounded-lg font-medium transition'>
+        <button type='submit' className='primary-btn w-full max-w-1/3'>
           Post
         </button>
       </form>

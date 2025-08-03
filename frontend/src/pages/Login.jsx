@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../store/authStore";
 import { loginUser } from "../services/authService";
 
@@ -79,14 +79,21 @@ function Login() {
               <label htmlFor='showPassword'>Show Password</label>
             </div>
 
-            <button type='submit' className='primary-btn'>
+            <button type='submit' className='primary-btn w-full'>
               Log In
             </button>
-          </form>
 
-          {error && (
-            <p className='text-red-500 text-sm mt-4 text-center'>{error}</p>
-          )}
+            {error && (
+              <p className='text-red-500 text-sm text-center'>{error}</p>
+            )}
+
+            <p className='text-sm text-center'>
+              Don’t have an account?{" "}
+              <Link to='/register' className='text-primary hover:underline'>
+                Register
+              </Link>
+            </p>
+          </form>
         </div>
       </div>
     </>

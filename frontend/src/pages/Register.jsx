@@ -1,13 +1,14 @@
 import { useState } from "react";
 import useAuthStore from "../store/authStore";
 import { registerUser } from "../services/authService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
+    bio: "",
   });
 
   const [error, setError] = useState("");
@@ -101,14 +102,32 @@ function Register() {
             <label htmlFor='showPassword'>Show Password</label>
           </div>
 
-          <button type='submit' className='primary-btn'>
+          <div>
+            <label htmlFor='bio' className='form-label'>
+              Bio <span className='text-gray-500'>(Optional)</span>
+            </label>
+            <textarea
+              id='bio'
+              name='bio'
+              className='form-input h-24 resize-none'
+              placeholder='Tell us something about yourself'
+              value={formData.bio}
+              onChange={handleChange}></textarea>
+          </div>
+
+          <button type='submit' className='primary-btn w-full'>
             Register
           </button>
-        </form>
 
-        {error && (
-          <p className='text-red-500 text-sm mt-4 text-center'>{error}</p>
-        )}
+          {error && <p className='text-red-500 text-sm text-center'>{error}</p>}
+
+          <p className='text-sm text-center'>
+            Already have an account?{" "}
+            <Link to='/login' className='text-primary hover:underline'>
+              Log in
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );

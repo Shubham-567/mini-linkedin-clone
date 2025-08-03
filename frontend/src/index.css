@@ -47,7 +47,7 @@
 
 @layer components {
   .primary-btn {
-    @apply bg-primary text-sm text-text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition;
+    @apply bg-primary text-sm text-text-white font-medium py-2 px-4 rounded-lg hover:bg-primary/90 transition cursor-pointer;
   }
 
   .card {
@@ -60,7 +60,7 @@
 
   /* Navbar */
   .navbar {
-    @apply bg-bg shadow px-6 py-3 flex items-center justify-between;
+    @apply w-full bg-bg shadow px-6 py-3 flex items-center justify-between;
   }
   .logo {
     @apply flex items-center gap-2;
@@ -116,7 +116,7 @@
   .profile-name {
     @apply text-3xl font-bold text-text;
   }
-  .profile-bio {
+  .profile-headline {
     @apply text-text-muted;
   }
   .profile-email {
