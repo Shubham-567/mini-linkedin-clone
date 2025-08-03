@@ -1,15 +1,23 @@
+import { Link } from "react-router-dom";
 import { formatDate } from "../utils/utils";
 
 function PostCard({ post }) {
+  // console.log(post.author._id);
+
   return (
-    <div className='post-card'>
+    <div className='card'>
       <div className='post-header'>
-        <img
-          src={post.author.avatar || "https://placehold.co/48x48"}
-          alt={post.author.name}
-        />
+        <Link to={`/profile/${post.author._id}`}>
+          <img
+            src={post.author.avatar || "https://placehold.co/48x48"}
+            alt={post.author.name}
+            className='post-img'
+          />
+        </Link>
         <div>
-          <h3 className='post-author'>{post.author.name}</h3>
+          <Link to={`/profile/${post.author._id}`}>
+            <h3 className='post-author'>{post.author.name}</h3>
+          </Link>
           <p className='post-date'>{formatDate(post.createdAt)}</p>
         </div>
       </div>
