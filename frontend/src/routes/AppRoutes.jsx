@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import Navbar from "../components/Navbar";
+import CreatePost from "../pages/CreatePost";
 
 function AppRoutes() {
   return (
@@ -14,6 +15,8 @@ function AppRoutes() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/profile/:userId' element={<Profile />} />
+        <Route path='/create-post' element={<CreatePost />} />
+
         <Route path='*' element={<p>Not found</p>} />
       </Routes>
     </Router>
