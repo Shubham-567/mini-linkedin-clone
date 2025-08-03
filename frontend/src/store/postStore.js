@@ -5,7 +5,7 @@ const userPostStore = create((set) => ({
   loading: false,
 
   // set posts
-  setPosts: (data) => set({ post: data }),
+  setPosts: (data) => set({ posts: data }),
 
   // add new post
   addPost: (newPost) =>
