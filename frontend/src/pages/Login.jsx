@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuthStore from "../store/authStore";
 import { loginUser } from "../services/authService";
 
@@ -9,7 +9,7 @@ function Login() {
   const [error, setError] = useState("");
   const [isPassHidden, setIsPassHidden] = useState(true);
 
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const login = useAuthStore((state) => state.login);
 
@@ -21,8 +21,8 @@ function Login() {
       const { user, token } = await loginUser({ email, password });
       login(user, token);
 
-      alert("login success");
-      //   navigate("/");
+      //   alert("login success");
+      navigate("/");
     } catch (error) {
       setError(error?.response?.data?.message || "Login failed");
     }

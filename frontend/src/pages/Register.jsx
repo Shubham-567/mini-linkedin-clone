@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuthStore from "../store/authStore";
 import { registerUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ function Register() {
   const [isPassHidden, setIsPassHidden] = useState(true);
 
   const login = useAuthStore((state) => state.login);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -29,8 +30,8 @@ function Register() {
     try {
       const { user, token } = await registerUser(formData);
       login(user, token);
-      alert("Registration success");
-      // navigate('/');
+      //   alert("Registration success");
+      navigate("/");
     } catch (error) {
       setError(error?.response?.data?.message || "Registration failed");
     }
